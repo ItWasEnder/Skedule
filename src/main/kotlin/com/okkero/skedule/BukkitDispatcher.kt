@@ -10,8 +10,6 @@ import kotlin.coroutines.CoroutineContext
 private val bukkitScheduler
     get() = Bukkit.getScheduler()
 
-
-@UseExperimental(InternalCoroutinesApi::class)
 class BukkitDispatcher(val plugin: JavaPlugin, val async: Boolean = false) : CoroutineDispatcher(), Delay {
 
     private val runTaskLater: (Plugin, Runnable, Long) -> BukkitTask =
