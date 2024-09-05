@@ -139,34 +139,30 @@ https://github.com/Kotlin/kotlinx.coroutines
 ## Where to get Skedule
 ### Maven
 ```maven
-<repositories>
-    <repository>
-        <id>okkero</id>
-        <url>http://nexus.okkero.com/repository/maven-releases/</url>
-    </repository>
-</repositories>
+<repository>
+  <id>ender-public</id>
+  <name>Ender's Repo</name>
+  <url>https://repo.ender.tv/public</url>
+</repository>
 ```
 ```maven
-<dependencies>
-    <dependency>
-        <groupId>com.okkero.skedule</groupId>
-        <artifactId>skedule</artifactId>
-        <version>1.2.6</version>
-        <scope>compile</scope>
-    </dependency>
-</dependencies>
+<dependency>
+  <groupId>com.okkero.skedule</groupId>
+  <artifactId>skedule</artifactId>
+  <version>1.3.0</version>
+</dependency>
 ```
 ### Gradle
 ```groovy
 repositories {
     maven {
-        name = "okkero"
-        url = "http://nexus.okkero.com/repository/maven-releases/"
+        name = "enderPublic"
+        url = uri("https://repo.ender.tv/public")
     }
 }
 
 dependencies {
-    compile("com.okkero.skedule:skedule:1.2.6")
+    implementation("com.okkero.skedule:skedule:1.3.0")
 }
 ```
 

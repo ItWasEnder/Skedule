@@ -13,13 +13,9 @@
 
     <distributionManagement>
         <repository>
-            <id>deployment-okkero</id>
-            <url>http://nexus.okkero.com/repository/maven-releases/</url>
+            <id>ender-private</id>
+            <url>https://repo.ender.tv/public</url>
         </repository>
-        <snapshotRepository>
-            <id>deployment-okkero</id>
-            <url>http://nexus.okkero.com/repository/maven-snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
 
     <properties>
@@ -29,6 +25,7 @@
         <dokka.version>1.9.20</dokka.version>
         <mvnsource.version>3.3.1</mvnsource.version>
         <surefire.version>2.22.2</surefire.version>
+        <javadoc.version>3.10.0</javadoc.version>
     </properties>
 
     <repositories>
@@ -178,6 +175,25 @@
                         --add-opens java.logging/java.util.logging=ALL-UNNAMED
                     </argLine>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${javadoc.version}</version>
+                <configuration>
+                    <additionalJOptions>
+                        <additionalJOption>-Xdoclint:none</additionalJOption>
+                    </additionalJOptions>
+                    <doclint>none</doclint>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
