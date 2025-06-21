@@ -140,29 +140,28 @@ https://github.com/Kotlin/kotlinx.coroutines
 ### Maven
 ```maven
 <repository>
-  <id>ender-public</id>
-  <name>Ender's Repo</name>
-  <url>https://repo.ender.tv/public</url>
+    <id>jitpack.io</id>
+	<url>https://jitpack.io</url>
 </repository>
 ```
 ```maven
 <dependency>
-  <groupId>com.okkero.skedule</groupId>
-  <artifactId>skedule</artifactId>
-  <version>1.3.0</version>
+    <groupId>com.github.ItWasEnder</groupId>
+    <artifactId>Skedule</artifactId>
+    <version>1.3.0</version>
 </dependency>
 ```
 ### Gradle
 ```groovy
 repositories {
     maven {
-        name = "enderPublic"
-        url = uri("https://repo.ender.tv/public")
+        name = "jitpack"
+        url = uri("https://jitpack.io")
     }
 }
 
 dependencies {
-    implementation("com.okkero.skedule:skedule:1.3.0")
+    implementation("com.github.ItWasEnder:Skedule:1.3.0")
 }
 ```
 
